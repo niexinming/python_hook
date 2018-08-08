@@ -1,3 +1,4 @@
 参考https://github.com/SafeBreach-Labs/pyekaboo 这个项目
-添加了python3的兼容
+添加了对python3.5的兼容
+不兼容python3.6
 修复了一些bug

@@ -5,8 +5,17 @@ import shlex
 import os
 import psycopg2
 from jinja2 import Template
+import base64
+import pickle
 
 app = Flask(__name__)
+
+@app.route('/pic',methods=['GET'])
+def mypickle():
+    base64_input=request.args.get('data')
+    deinput=base64.b64decode(base64_input)
+    pickle.loads(deinput)
+    return "ok"
 
 @app.route('/tpl',methods=['GET'])
 def mytemplate():
@@ -75,4 +84,4 @@ def mysql():
 
 if __name__ == '__main__':
     
-    app.run(use_debugger=True, debug=False,host='0.0.0.0')
+    app.run(use_debugger=True, debug=True,host='0.0.0.0')

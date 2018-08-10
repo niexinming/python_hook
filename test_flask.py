@@ -7,8 +7,16 @@ import psycopg2
 from jinja2 import Template
 import base64
 import pickle
+import requests
 
 app = Flask(__name__)
+
+@app.route('/req',methods=['GET'])
+def myrequest():
+    url=request.args.get('url')
+    r=requests.get(url)
+    return r.text
+    
 
 @app.route('/pic',methods=['GET'])
 def mypickle():

@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/pic',methods=['GET'])
 def mypickle():
-    base64_input=request.args.get('data')
+    base64_input=request.args.get('data')   #pic?data=Y29zCnN5c3RlbQooUycvYmluL2xzJwp0Ui4%3d
     deinput=base64.b64decode(base64_input)
     pickle.loads(deinput)
     return "ok"

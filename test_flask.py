@@ -92,4 +92,4 @@ def mysql():
 
 if __name__ == '__main__':
     
-    app.run(use_debugger=True, debug=True,host='0.0.0.0')
+    app.run(use_debugger=True, debug=False,host='0.0.0.0')
